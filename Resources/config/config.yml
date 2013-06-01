@@ -1,4 +1,2 @@
-twig:
-    form:
-        resources:
-            - 'SnideExtraFormBundle:Form:fields.html.twig'
+parameters:
+    snide_extra_form.form.templating: 'SnideExtraFormBundle:Form:fields.html.twig'

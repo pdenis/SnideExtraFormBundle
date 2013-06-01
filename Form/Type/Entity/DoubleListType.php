@@ -1,4 +1,14 @@
 <?php
+
+/*
+ * This file is part of the SnideExtraFormBundle.
+ *
+ * (c) Pascal DENIS <pascal.denis.75@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Snide\ExtraFormBundle\Form\Type\Entity;
 
 use Symfony\Component\Form\AbstractType;
@@ -6,6 +16,11 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\Form\FormInterface;
 
+
+/**
+ * 
+ * @author Pascal DENIS <pascal.denis.75@gmail.com
+ */
 class DoubleListType extends AbstractType
 {
     public function setDefaultOptions(OptionsResolverInterface $resolver)

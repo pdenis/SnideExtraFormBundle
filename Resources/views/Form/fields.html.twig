@@ -1,5 +1,5 @@
 
-{% block double_list_widget %}
+{% block entity_double_list_widget %}
     <script language="javascript">
         $().ready(function() {
             $('#{{ id }}').multiselect2side({
@@ -16,7 +16,6 @@
                 'labelsx': '{{ labelsx }}',
                 'labeldx': '{{ labeldx }}',
                 'autoSort': '{{ autoSort }}',
-                'autoSortAvailable': '{{ autoSortAvailable }}',
                 'caseSensitive': '{{ caseSensitive }}',
                 'delay': {{ delay }}
             });
