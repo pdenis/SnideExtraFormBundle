@@ -1,0 +1,40 @@
+
+{% block double_list_widget %}
+    <script language="javascript">
+        $().ready(function() {
+            $('#{{ id }}').multiselect2side({
+                'search': '{{ search }}',
+                'minSize': {{ minSize }},
+                'selectedPosition': '{{ selectedPosition }}',
+                'moveOptions': '{{ moveOptions }}',
+                'labelTop': '{{ labelTop }}',
+                'labelBottom': '{{ labelBottom }}',
+                'labelUp': '{{ labelUp }}',
+                'labelDown': '{{ labelDown }}',
+                'labelSort': '{{ labelSort }}',
+                'maxSelected': {{ maxSelected }},
+                'labelsx': '{{ labelsx }}',
+                'labeldx': '{{ labeldx }}',
+                'autoSort': '{{ autoSort }}',
+                'autoSortAvailable': '{{ autoSortAvailable }}',
+                'caseSensitive': '{{ caseSensitive }}',
+                'delay': {{ delay }}
+            });
+        });
+    </script>
+    {% spaceless %}
+        {% if expanded %}
+            <ul {{ block('widget_container_attributes') }}>
+            {% for child in form %}
+                <li>
+                    {{ form_widget(child) }}
+                    {{ form_label(child) }}
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            {# laisse le widget choice afficher la balise select #}
+            {{ block('choice_widget') }}
+        {% endif %}
+    {% endspaceless %}
+{% endblock %}

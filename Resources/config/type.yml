@@ -1,0 +1,5 @@
+services:
+    snide_extra_form.form.type.entity_double_list:
+        class: Snide\ExtraFormBundle\Form\Type\Entity\DoubleListType
+        tags:
+            - { name: form.type, alias: entity_double_list }

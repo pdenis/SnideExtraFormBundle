@@ -1,0 +1,20 @@
+{
+    "name":         "snide/extra-form-bundle",
+    "type":         "symfony-bundle",
+    "description":  "extra form type bundle",
+    "keywords":     ["form", "extra"],
+    "homepage":     "http://github.com/pdenis/SnideExtraFormBundle",
+    "license":      "MIT",
+    "authors":      [
+        {
+            "name":     "Pascal Denis",
+            "email":    "pascal.denis.75@gmail.com"
+        }
+    ],
+    "autoload":     {
+        "psr-0": {
+            "Snide\\ExtraFormBundle": ""
+        }
+    },
+    "target-dir":   "Snide/ExtraFormBundle"
+}
