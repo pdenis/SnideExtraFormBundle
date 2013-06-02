@@ -12,6 +12,7 @@ Extra form types for symfony 2
 
 If you use composer, add ExtraFormBundle bundle as a dependency to the composer.json of your application
 
+```php
     "require": {
         ...
         "snide/extra-form-bundle": "dev-master"
