@@ -26,6 +26,7 @@ class DoubleListType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
+            'required'         => false,
             'optGroupSearch'   => false,
             'minSize'          => 6,
             'selectedPosition' => 'right',
@@ -35,9 +36,9 @@ class DoubleListType extends AbstractType
             'labelBottom'      => 'Bottom',
             'labelUp'          => 'Up',
             'labelSort'        => 'Sort',
-            'maxSelected'      => 1000,
-            'labelsx'          => 'Selected',
-            'labeldx'          => 'Available',
+            'maxSelected'      => -1,
+            'labelsx'          => 'Available',
+            'labeldx'          => 'Selected',
             'autoSort'         => false,
             'search'           => 'Search',
             'caseSensitive'    => false,
