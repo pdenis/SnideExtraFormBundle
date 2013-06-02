@@ -39,7 +39,7 @@ Add SnideExtraFormBundle to your application kernel.
 The bundle needs to copy the resources necessary to the web folder. You can use the command below:
 
 ```bash
-    php app/console assets:install web/
+    php app/console assets:install
 ```
 
 ## Include in template
