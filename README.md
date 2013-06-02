@@ -4,7 +4,7 @@ SnideExtraFormBundle
 Extra form types for symfony 2
 
 ## features
-- Double list type
+- Double list type based on jQuery multiselect2side plugin
 
 ## Installation
 
