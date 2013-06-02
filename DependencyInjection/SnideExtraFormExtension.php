@@ -31,10 +31,14 @@ class SnideExtraFormExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
+         $config = $this->processConfiguration(new Configuration(), $configs);
+
          $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
          $loader->load('type.yml');
          $loader->load('config.yml');
+         $loader->load('twig_extension.yml');
 
+         $container->setParameter('snide_extra_form.config', $config);
     }
 
     /**
