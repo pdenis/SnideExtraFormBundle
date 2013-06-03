@@ -45,14 +45,10 @@ The bundle needs to copy the resources necessary to the web folder. You can use 
 ## Include in template
 
 This bundle comes with an extension for Twig. To init CSS scripts use
+This makes it very easy to include the extra form Javascript and CSS into your pages only if needed. It will output the complete Javascript, including `<script>` tags and add stylesheets. Add it to the bottom of your page.
 
 ```twig
     {{ snide_extra_form_init() }}
-```
-
-This makes it very easy to include the extra form Javascript into your pages. It will output the complete Javascript, including `<script>` tags. Add it to the bottom of your page.
-```twig
-    {{ snide_extra_form_renderScript() }}
 ```
 ## Base configuration
 

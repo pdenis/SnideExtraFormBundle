@@ -28,7 +28,7 @@ class DoubleListType extends AbstractType
         $resolver->setDefaults(array(
             'required'         => false,
             'optGroupSearch'   => false,
-            'minSize'          => 6,
+            'minSize'          => 20,
             'selectedPosition' => 'right',
             'moveOptions'      => 'right',
             'labelTop'         => 'Top',

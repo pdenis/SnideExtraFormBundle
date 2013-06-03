@@ -1,1 +1,15 @@
-<link rel="stylesheet" href="{{ asset('/bundles/snideextraform/css/jquery.multiselect2side.css') }}" rel="stylesheet"> 
+{% if include_jquery %}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+{% endif %}
+
+{% if double_list_script %}
+	<script src="{{ asset('/bundles/snideextraform/js/jquery.multiselect2side.js') }}"></script>
+
+	<script type="text/javascript">
+	/* Add multiselect CSS */
+	$("<link rel='stylesheet' href='{{ asset('/bundles/snideextraform/css/jquery.multiselect2side.css') }}' rel='stylesheet'>").appendTo(document.head);
+	//<![CDATA[
+		{{ double_list_script|raw }}
+	//]]>
+	</script>
+{% endif %}

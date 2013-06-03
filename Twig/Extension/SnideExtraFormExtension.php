@@ -32,7 +32,7 @@ class SnideExtraFormExtension extends \Twig_Extension
      * 
      * @var string
      */
-    protected $script;
+    protected $scriptContainer;
 
     /**
      * Initialize tinymce helper
@@ -42,6 +42,9 @@ class SnideExtraFormExtension extends \Twig_Extension
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
+        $this->scriptContainer = array(
+            'double_list' => ''
+        );
     }
 
     /**
@@ -76,15 +79,14 @@ class SnideExtraFormExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'snide_extra_form_init'     => new \Twig_Function_Method($this, 'init', array('is_safe'=> array('html'))),
             'snide_extra_form_addDoubleList'=> new \Twig_Function_Method($this, 'addDoubleList', array('is_safe'=> array('html'))),
-            'snide_extra_form_renderScript'   => new \Twig_Function_Method($this, 'renderScript', array('is_safe'=> array('html')))
+            'snide_extra_form_init'   => new \Twig_Function_Method($this, 'init', array('is_safe'=> array('html')))
         );
     }
 
     public function addDoubleList(array $params)
     {
-        $this->script .= "$('#".$params['id']."').multiselect2side({
+        $this->scriptContainer['double_list'] .= "$('#".$params['id']."').multiselect2side({
             'search': '".$params['search']."',
             'minSize': ".$params['minSize'].",
             'selectedPosition': '".$params['selectedPosition']."',
@@ -104,31 +106,17 @@ class SnideExtraFormExtension extends \Twig_Extension
     }
 
     /**
-     * Form initializations
-     *
-     * @return string
-     */
-    public function init()
-    {
-
-        /** @var $assets \Symfony\Component\Templating\Helper\CoreAssetsHelper */
-        $assets = $this->getService('templating.helper.assets');
-
-        return $this->getService('templating')->render('SnideExtraFormBundle:Script:init.html.twig', array());
-    }
-
-    /**
      * Render script 
      * 
      * @return string
      */
-    public function renderScript()
+    public function init()
     {
         $config = $this->container->getParameter('snide_extra_form.config');
 
-        return $this->getService('templating')->render('SnideExtraFormBundle:Script:render.html.twig', array(
-            'script'         => $this->script,
-            'include_jquery' => $config['include_jquery']
+        return $this->getService('templating')->render('SnideExtraFormBundle:Script:init.html.twig', array(
+            'double_list_script' => $this->scriptContainer['double_list'],
+            'include_jquery'     => $config['include_jquery']
         ));
     }
 
@@ -140,27 +128,5 @@ class SnideExtraFormExtension extends \Twig_Extension
     public function getName()
     {
         return 'snide_extra_form';
-    }
-
-
-    /**
-     * Get url from config string
-     *
-     * @param string $inputUrl
-     *
-     * @return string
-     */
-    protected function getAssetsUrl($inputUrl)
-    {
-        /** @var $assets \Symfony\Component\Templating\Helper\CoreAssetsHelper */
-        $assets = $this->getService('templating.helper.assets');
-
-        $url = preg_replace('/^asset\[(.+)\]$/i', '$1', $inputUrl);
-
-            if ($inputUrl !== $url) {
-            return $assets->getUrl($this->baseUrl . $url);
-        }
-
-        return $inputUrl;
     }
 }
