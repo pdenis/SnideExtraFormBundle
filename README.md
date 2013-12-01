@@ -3,6 +3,8 @@ SnideExtraFormBundle
 
 Extra form types for symfony 2
 
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/pdenis/ExtraFormBundle/badges/quality-score.png?s=571f31ce1079abf2d200c2fffb4320b244be8533)](https://scrutinizer-ci.com/g/pdenis/ExtraFormBundle/)
+
 ## features
 - Double list type based on jQuery multiselect2side plugin
 
