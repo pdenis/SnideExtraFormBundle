@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Snide\ExtraFormBundle\Form\Type\Entity;
+namespace Snide\Bundle\ExtraFormBundle\Form\Type\Entity;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;

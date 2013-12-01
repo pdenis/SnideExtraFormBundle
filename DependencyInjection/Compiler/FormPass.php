@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Snide\ExtraFormBundle\DependencyInjection\Compiler;
+namespace Snide\Bundle\ExtraFormBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

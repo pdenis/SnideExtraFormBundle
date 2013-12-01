@@ -31,7 +31,7 @@ Add SnideExtraFormBundle to your application kernel.
     {
         $bundles = array(
             // ...
-            new Snide\ExtraFormBundle\SnideExtraFormBundle(),
+            new Snide\Bundle\ExtraFormBundle\SnideExtraFormBundle(),
         );
     }
 ```

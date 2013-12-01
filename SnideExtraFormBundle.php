@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
  
-namespace Snide\ExtraFormBundle;
+namespace Snide\Bundle\ExtraFormBundle;
  
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Snide\ExtraFormBundle\DependencyInjection\Compiler\FormPass;
+use Snide\Bundle\ExtraFormBundle\DependencyInjection\Compiler\FormPass;
  
 /**
  * 

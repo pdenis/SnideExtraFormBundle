@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Snide\ExtraFormBundle\Twig\Extension;
+namespace Snide\Bundle\ExtraFormBundle\Twig\Extension;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -80,10 +80,16 @@ class SnideExtraFormExtension extends \Twig_Extension
     {
         return array(
             'snide_extra_form_addDoubleList'=> new \Twig_Function_Method($this, 'addDoubleList', array('is_safe'=> array('html'))),
-            'snide_extra_form_init'   => new \Twig_Function_Method($this, 'init', array('is_safe'=> array('html')))
+            'snide_extra_form_init'         => new \Twig_Function_Method($this, 'init', array('is_safe'=> array('html')))
         );
     }
 
+    /**
+     * Add double list method
+     * Create a double list
+     *
+     * @param array $params Double list options
+     */
     public function addDoubleList(array $params)
     {
         $this->scriptContainer['double_list'] .= "$('#".$params['id']."').multiselect2side({

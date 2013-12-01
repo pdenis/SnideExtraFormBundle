@@ -13,8 +13,8 @@
     ],
     "autoload":     {
         "psr-0": {
-            "Snide\\ExtraFormBundle": ""
+            "Snide\\Bundle\\ExtraFormBundle": ""
         }
     },
-    "target-dir":   "Snide/ExtraFormBundle"
+    "target-dir":   "Snide/Bundle/ExtraFormBundle"
 }
