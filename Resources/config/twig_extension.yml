@@ -1,5 +1,5 @@
 services:
-   twig.extension.mopa.form:
+   twig.extension.snide.form:
        class: 'Snide\Bundle\ExtraFormBundle\Twig\Extension\SnideExtraFormExtension'
        arguments: [ '@service_container' ]
        tags:
