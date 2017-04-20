@@ -78,9 +78,9 @@ class SnideExtraFormExtension extends \Twig_Extension
      */
     public function getFunctions()
     {
-        return array(
-            'snide_extra_form_addDoubleList'=> new \Twig_Function_Method($this, 'addDoubleList', array('is_safe'=> array('html'))),
-            'snide_extra_form_init'         => new \Twig_Function_Method($this, 'init', array('is_safe'=> array('html')))
+	return array(
+            new \Twig_SimpleFunction('snide_extra_form_addDoubleList', array($this, 'addDoubleList'), array('is_safe' => array('html'))),
+            new \Twig_SimpleFunction('snide_extra_form_init', array($this, 'init'), array('is_safe' => array('html'))),
         );
     }
 
